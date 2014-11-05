@@ -42,12 +42,14 @@ your connector.
  1. Start the crossdata server (https://github.com/Stratio/crossdata)
  2. Launch the connector
 
+```
 
     $ target/crossdata-connector-skeleton-0.0.1-SNAPSHOT/bin/crossdata-connector-skeleton-0.0.1-SNAPSHOT start
     Starting crossdata-connector-skeleton-0.0.1-SNAPSHOT
     Launching service process: crossdata-connector-skeleton-0.0.1-SNAPSHOT
     Password: 
     PID: /home/dhiguero/development/stratio/crossdata-connector-skeleton/target/crossdata-connector-skeleton-0.0.1-SNAPSHOT/crossdata-connector-skeleton-0.0.1-SNAPSHOT.pid servicePid: 19085
+```
 
    Notice that by default, the root user is the one which launches the service, 
    you can change the launching parameters in the maven plugin configuration or in the launching script.
@@ -94,6 +96,8 @@ your connector.
  1. Download the [stratio-connectors-test](https://github.com/Stratio/stratio-connectors-test/) project from Github.
  
     > $ git clone https://github.com/Stratio/stratio-connectors-test.git
+    
+    
     > $ git checkout develop
     
  2. Execute the tests
@@ -110,15 +114,17 @@ your connector.
 ```
     
  Where
- 
- | Option | Description |
- |--------------------|
- | connectorJar | Path to the jar generated with the crossdata-connector:install goal |
- | connectorDefinition | Path to the connector manifest |
- | connectorIPs | List of datastore IP addresses |
- | connectorPorts | List of datastore ports |
- | connectorCluster | ClusterName used in the tests |
- | connectorMainClass | Class that implements the IConnector interface |
+
+
+| Option | Description |
+|--------------------|
+| connectorJar | Path to the jar generated with the crossdata-connector:install goal |
+| connectorDefinition | Path to the connector manifest |
+| connectorIPs | List of datastore IP addresses |
+| connectorPorts | List of datastore ports |
+| connectorCluster | ClusterName used in the tests |
+| connectorMainClass | Class that implements the IConnector interface |
+
 
 ## Documentation ##
 
