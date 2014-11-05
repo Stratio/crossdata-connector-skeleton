@@ -171,7 +171,7 @@
                 <version>${crossdata.version}</version>
                 <configuration>
                     <mainClass>com.stratio.connector.skeleton.SkeletonConnector</mainClass>
-                    <jmxPort>7180</jmxPort>
+                    <jmxPort>7186</jmxPort>
                 </configuration>
             </plugin>
 

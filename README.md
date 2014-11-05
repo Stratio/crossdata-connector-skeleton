@@ -12,14 +12,15 @@ In order to keep an updated development base, we recommend you to follow the nex
     > $ git clone https://github.com/Stratio/crossdata-connector-skeleton.git
  
  2. Open your IDE of choice (we usually employ IntelliJ) and import the project using its maven definition (pom.xml)
- 3. Check the [Crossdata Tutorial](https://github.com/Stratio/crossdata/_doc/InMemory-Connector-Tutorial.md) on building
+ 3. Check the [Crossdata Tutorial](https://github.com/Stratio/crossdata/_doc/InMemory-Connector-Development-Tutorial.md)
+  on building
   an in-memory storage connector and start developing your own.
  
 ### Compiling ###
 
 A custom-made maven plugin is available to simplify the connector install and execution.
  
-    > $ mvn crossdata-connector:install
+    $ mvn crossdata-connector:install
  
 This plugin will compile the sources generating a directory structure with all the elements required to run 
 your connector.
@@ -83,6 +84,41 @@ your connector.
     xdsh:user> INSERT INTO test.table1(id, name) VALUES (1, 'data');
     xdsh:user> SELECT * FROM test.table1;
 
+
+## Automatic tests ##
+
+   To facilitate the development and testing of new connectors, we provide an automatic test suite in charge of 
+   testing all defined operations. The type and number of test depends on the operations supported by the connector 
+   as defined in its manifests. To test a new connector:
+   
+ 1. Download the [stratio-connectors-test](https://github.com/Stratio/stratio-connectors-test/) project from Github.
+ 
+    > $ git clone https://github.com/Stratio/stratio-connectors-test.git
+    > $ git checkout develop
+    
+ 2. Execute the tests
+
+```
+
+    $ mvn clean verify \
+    -DconnectorJar="/.../target/crossdata-connector-skeleton-0.0.1-SNAPSHOT.jar" \
+    -DconnectorDefinition="/.../target/crossdata-connector-skeleton-0.0.1-SNAPSHOT/conf/SkeletonConnector.xml"
+    -DconnectorIPs="[127.0.0.1]" \
+    -DconnectorPorts="1234" \
+    -DconnectorCluster="TestClusterName" \
+    -DconnectorMainClass="com.stratio.connectors.skeleton.SkeletonConnector"
+```
+    
+ Where
+ 
+ | Option | Description |
+ |--------------------|
+ | connectorJar | Path to the jar generated with the crossdata-connector:install goal |
+ | connectorDefinition | Path to the connector manifest |
+ | connectorIPs | List of datastore IP addresses |
+ | connectorPorts | List of datastore ports |
+ | connectorCluster | ClusterName used in the tests |
+ | connectorMainClass | Class that implements the IConnector interface |
 
 ## Documentation ##
 
