@@ -117,7 +117,7 @@ your connector.
 
 
 | Option | Description |
-|--------------------|
+|--------|------------|
 | connectorJar | Path to the jar generated with the crossdata-connector:install goal |
 | connectorDefinition | Path to the connector manifest |
 | connectorIPs | List of datastore IP addresses |
