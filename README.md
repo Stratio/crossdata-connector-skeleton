@@ -107,8 +107,8 @@ your connector.
     $ mvn clean verify \
     -DconnectorJar="/.../target/crossdata-connector-skeleton-0.0.1-SNAPSHOT.jar" \
     -DconnectorDefinition="/.../target/crossdata-connector-skeleton-0.0.1-SNAPSHOT/conf/SkeletonConnector.xml"
-    -DconnectorIPs="[127.0.0.1]" \
-    -DconnectorPorts="1234" \
+    -DclusterOptions="[Hosts-[127.0.0.1]; Port-1234; ...]" \
+    -DconnectorOptions="[ConnectorProperty-Value; ConnectorProperty-Value;...]" \
     -DconnectorCluster="TestClusterName" \
     -DconnectorMainClass="com.stratio.connectors.skeleton.SkeletonConnector"
 ```
@@ -120,8 +120,8 @@ your connector.
 |--------|------------|
 | connectorJar | Path to the jar generated with the crossdata-connector:install goal |
 | connectorDefinition | Path to the connector manifest |
-| connectorIPs | List of datastore IP addresses |
-| connectorPorts | List of datastore ports |
+| clusterOptions | List of cluster options |
+| connectorOptions| List of connector properties |
 | connectorCluster | ClusterName used in the tests |
 | connectorMainClass | Class that implements the IConnector interface |
 
