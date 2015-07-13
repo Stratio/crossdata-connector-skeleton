@@ -40,13 +40,17 @@ import com.stratio.crossdata.common.statements.structures.Relation;
  * Skeleton storage engine.
  */
 public class SkeletonStorageEngine implements IStorageEngine{
-    @Override public void insert(ClusterName targetCluster, TableMetadata targetTable, Row row)
+
+
+
+    @Override public void insert(ClusterName targetCluster, TableMetadata targetTable, Row row, boolean isNotExists)
             throws ConnectorException {
         throw new UnsupportedException("Method not implemented");
+
     }
 
-    @Override public void insert(ClusterName targetCluster, TableMetadata targetTable, Collection<Row> rows)
-            throws ConnectorException {
+    @Override public void insert(ClusterName targetCluster, TableMetadata targetTable, Collection<Row> rows,
+            boolean isNotExists) throws ConnectorException {
         throw new UnsupportedException("Method not implemented");
     }
 

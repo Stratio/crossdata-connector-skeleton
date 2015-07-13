@@ -28,11 +28,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.stratio.connector</groupId>
     <artifactId>crossdata-connector-skeleton</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>Stratio Crossdata Connector Skeleton</name>
     <description>Base Crossdata connector project to develop other connectors</description>
     <url>https://github.com/Stratio/crossdata-connector-skeleton</url>
     <packaging>jar</packaging>
+
+
 
     <scm>
         <url>scm:git:git@github.com:Stratio/crossdata-connector-skeleton.git</url>
@@ -40,9 +42,9 @@
     </scm>
 
     <properties>
-        <crossdata.version>0.1.1-SNAPSHOT</crossdata.version>
+        <crossdata.version>0.4.0-SNAPSHOT</crossdata.version>
         <scala.version>2.10.4</scala.version>
-        <akka.version>2.2.4</akka.version>
+        <akka.version>2.3.11</akka.version>
         <scala.dep.version>2.10</scala.dep.version>
         <slf4j.version>1.7.7</slf4j.version>
         <coverage.data.dir>${project.build.outputDirectory}</coverage.data.dir>

@@ -36,14 +36,19 @@ import com.stratio.crossdata.common.result.QueryResult;
  */
 public class SkeletonQueryEngine implements IQueryEngine{
 
-    @Override
-    public QueryResult execute(LogicalWorkflow workflow) throws ConnectorException {
+
+    @Override public QueryResult execute(String queryId, LogicalWorkflow workflow) throws ConnectorException {
         throw new UnsupportedException("Method not implemented");
     }
 
     @Override
     public void asyncExecute(String queryId, LogicalWorkflow workflow, IResultHandler resultHandler)
             throws ConnectorException {
+        throw new UnsupportedException("Method not implemented");
+    }
+
+    @Override public void pagedExecute(String queryId, LogicalWorkflow workflow, IResultHandler resultHandler,
+            int pageSize) throws ConnectorException {
         throw new UnsupportedException("Method not implemented");
     }
 

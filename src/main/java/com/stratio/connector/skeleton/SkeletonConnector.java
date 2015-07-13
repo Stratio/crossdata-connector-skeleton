@@ -54,14 +54,13 @@ public class SkeletonConnector implements IConnector{
      */
     private static final Logger LOG = Logger.getLogger(SkeletonConnector.class);
 
-    @Override
-    public String getConnectorName() {
-        return "SkeletonConnector";
+
+    @Override public String getConnectorManifestPath() {
+        return null;
     }
 
-    @Override
-    public String[] getDatastoreName() {
-        return new String[]{"SkeletonDatastore"};
+    @Override public String[] getDatastoreManifestPath() {
+        return new String[0];
     }
 
     @Override
@@ -84,6 +83,10 @@ public class SkeletonConnector implements IConnector{
     @Override public void shutdown() throws ExecutionException {
         //This method is called when the user decides to stop the connector service.
         throw new ExecutionException("Method not implemented");
+    }
+
+    @Override public void restart() throws ExecutionException {
+
     }
 
     @Override public boolean isConnected(ClusterName name) {

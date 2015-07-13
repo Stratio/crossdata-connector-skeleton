@@ -24,6 +24,9 @@
 
 package com.stratio.connector.skeleton.engine;
 
+import java.util.List;
+import java.util.Map;
+
 import com.stratio.crossdata.common.connector.IMetadataEngine;
 import com.stratio.crossdata.common.data.AlterOptions;
 import com.stratio.crossdata.common.data.CatalogName;
@@ -34,6 +37,7 @@ import com.stratio.crossdata.common.exceptions.UnsupportedException;
 import com.stratio.crossdata.common.metadata.CatalogMetadata;
 import com.stratio.crossdata.common.metadata.IndexMetadata;
 import com.stratio.crossdata.common.metadata.TableMetadata;
+import com.stratio.crossdata.common.statements.structures.Selector;
 
 /**
  * Skeleton metadata engine implementation.
@@ -44,6 +48,11 @@ public class SkeletonMetadataEngine implements IMetadataEngine{
     public void createCatalog(ClusterName targetCluster, CatalogMetadata catalogMetadata)
             throws ConnectorException {
         throw new UnsupportedException("Method not implemented");
+    }
+
+    @Override public void alterCatalog(ClusterName targetCluster, CatalogName catalogName,
+            Map<Selector, Selector> options) throws ConnectorException {
+
     }
 
     @Override
@@ -76,6 +85,20 @@ public class SkeletonMetadataEngine implements IMetadataEngine{
 
     @Override
     public void dropIndex(ClusterName targetCluster, IndexMetadata indexMetadata) throws ConnectorException {
+        throw new UnsupportedException("Method not implemented");
+    }
+
+    @Override public List<CatalogMetadata> provideMetadata(ClusterName clusterName) throws ConnectorException {
+        throw new UnsupportedException("Method not implemented");
+    }
+
+    @Override public CatalogMetadata provideCatalogMetadata(ClusterName clusterName, CatalogName catalogName)
+            throws ConnectorException {
+        throw new UnsupportedException("Method not implemented");
+    }
+
+    @Override public TableMetadata provideTableMetadata(ClusterName clusterName, TableName tableName)
+            throws ConnectorException {
         throw new UnsupportedException("Method not implemented");
     }
 }
